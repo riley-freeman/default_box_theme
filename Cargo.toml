@@ -1,0 +1,13 @@
+[package]
+name = "default_box_theme"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+mercy = { path = "../mercy" }
+turubai = { path = "../turubai/turubai", features = ["web"] }
+turubai_macros = { path = "../turubai/turubai_macros" }
+box_blocks = { path = "../box_blocks" }

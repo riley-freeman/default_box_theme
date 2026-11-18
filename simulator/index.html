@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turubai - Hello, World!</title>
+    <link rel="stylesheet" href="styles.css"/> 
+  </head>
+  <body>
+    <div class="turubai-render-target"></div>
+
+    <script type="module">
+
+      import init, { render_profile } from '/turubai/imports.js';
+      await init('./user_theme.box/binaries.wasm');
+      try {
+        render_profile();
+      } catch (e) {
+        // Expected: WASM returns control to the browser event loop
+        // so spawn_local async tasks can execute and render the UI.
+      }
+    </script>
+  </body>
+</html>
